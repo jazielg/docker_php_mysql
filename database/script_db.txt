@@ -1,0 +1,12 @@
+sudo docker exec -it db_mysql bash
+
+# Dentro do container
+```
+mysql -u test -p123456
+
+use test_db;
+
+create table users(id int primary key auto_increment, name varchar(255));
+
+insert into users(name) values ('John'),( 'Michael'), ('Alice');
+```

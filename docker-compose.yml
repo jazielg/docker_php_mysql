@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  web:
+    container_name: web_php
+    image: php:7.2-apache
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 8000:80 # http://localhost:8000
+    build:
+      context: ./src # caminho do Dockerfile do php
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+  db:
+    container_name: db_mysql
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: test
+      MYSQL_PASSWORD: 123456
+    volumes:
+      - ./database:/var/lib/mysql
+    ports:
+      - 3307:3306
