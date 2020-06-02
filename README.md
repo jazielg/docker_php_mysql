@@ -1,12 +1,22 @@
 # Docker PHP e Mysql
+Container PHP com conexão ao container Mysql.
 
-## INSTALAR DOCKER E DOCKER-COMPOSE
+### Instalar Docker e Docker Compose
 
 https://docs.docker.com/engine/install/ubuntu/
+```bash
+sudo apt-get remove docker docker-engine docker.io containerd runc
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
 
 https://docs.docker.com/compose/install/
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
-## COMANDOS
+### Comandos
 ```bash
 docker ps      # Lista todos os containers ativos.
 docker ps -a   # Lista todos os cantainers ativados e desativados.
