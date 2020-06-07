@@ -15,6 +15,11 @@ https://docs.docker.com/compose/install/
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 ```
+Fazer o docker funcionar sem sudo e na extensão do VSCode:
+```bash
+sudo gpasswd -a $USER docker
+sudo setfacl -m user:<your username>:rw /var/run/docker.sock
+```
 
 ### Comandos
 ```bash
